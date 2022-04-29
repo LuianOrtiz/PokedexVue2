@@ -12,27 +12,3 @@
         </b-form>
     </div> 
 </template>
-<script>
-
-export default {
-    name: 'IniciarSesion',
-    data(){
-        return{
-            correo: "",
-            password: ""
-        }
-    },
-    methods: {
-
-    }
-}
-</script>
-
-<style scoped>
-.formulario {
-    border-style: solid;
-    border-color: red;
-    padding: 30px 30px;
-}
-
-</style>

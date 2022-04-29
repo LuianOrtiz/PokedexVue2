@@ -1,6 +1,8 @@
 <template>
     <div class="login">
-        <IniciarSesion />
+        <b-container>
+            <IniciarSesion />
+        </b-container>
     </div>
 </template>
 
@@ -14,3 +16,6 @@ export default {
   }
 }
 </script>
+<style scoped>
+
+</style>
