@@ -1,20 +1,70 @@
 <template>
-
   <div class="home">
-    
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <b-container class="bv-example-row" fluid>
+      <b-row>
+        <b-col>
+          <br>
+          <PokemonCard />
+          <br>
+          <PokemonCard />
+          <br>
+          <PokemonCard />
+          <br>
+          
+        </b-col>
+        <b-col>
+          <br>
+          <PokemonCard />
+          <br>
+          <PokemonCard />
+          <br>
+          <PokemonCard />
+          <br>
+        </b-col>
+        <b-col>
+          <br>
+          <PokemonCard />
+          <br>
+          <PokemonCard />
+          <br>
+          <PokemonCard />
+          <br>
+        </b-col>
+        
+        <b-col>
+          djaslkjdklasjkdlasjdlkjaslkjjdlkajsdlk
+          sadjaslkdjaslk
+          <br>asjdklasjdlkas
+          <br>
+          sadkljaksdjasldjsa
+          brasjrasbrsajdkaslk
+          <br>lsjdlkas
+          asbr
+          sad
+
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import PokemonCard from '@/components/Home/PokemonCard.vue'
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    PokemonCard
   }
 }
 </script>
+
+<style scoped>
+.home{
+  background-color: crimson;
+}
+.columnas{
+  padding: 50px 50px;
+  margin: 10px 10px;
+}
+</style>
