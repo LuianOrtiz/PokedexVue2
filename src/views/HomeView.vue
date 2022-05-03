@@ -6,17 +6,8 @@
           <br>
           <PokemonCard />
           <br>
-          <PokemonCard />
-          <br>
-          <PokemonCard />
-          <br>
-          
         </b-col>
         <b-col>
-          <br>
-          <PokemonCard />
-          <br>
-          <PokemonCard />
           <br>
           <PokemonCard />
           <br>
@@ -25,12 +16,7 @@
           <br>
           <PokemonCard />
           <br>
-          <PokemonCard />
-          <br>
-          <PokemonCard />
-          <br>
         </b-col>
-        
         <b-col>
           djaslkjdklasjkdlasjdlkjaslkjjdlkajsdlk
           sadjaslkdjaslk
@@ -61,7 +47,7 @@ export default {
 
 <style scoped>
 .home{
-  background-color: crimson;
+  background-image: url('@/assets/background-home.jpg');
 }
 .columnas{
   padding: 50px 50px;

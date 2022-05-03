@@ -15,7 +15,9 @@
   text-align: center;
   color: #2c3e50;
 }
-
+#app{
+  background-image: url('@/assets/formulario-background.jpg');
+}
 nav {
   padding: 30px;
 }

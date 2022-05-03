@@ -7,8 +7,12 @@
             <b-input-group  class="mb-2 mr-sm-2 mb-sm-0">
             <b-form-input id="inline-form-input-username" placeholder="Username"></b-form-input>
             </b-input-group>
+            <br>
             <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Recordar Sesion</b-form-checkbox>
-            <b-button variant="primary">Iniciar Sesión</b-button>
+            <div class="botones">
+                <b-button variant="primary">Iniciar Sesión</b-button>
+            </div>
+                <b-button variant="link">Registrarse</b-button>
         </b-form>
     </div> 
 </template>
@@ -33,6 +37,9 @@ export default {
     border-style: solid;
     border-color: red;
     padding: 30px 30px;
+}
+.botones{
+    margin: 30px 30px;
 }
 
 </style>
