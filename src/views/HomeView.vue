@@ -2,6 +2,7 @@
   <div class="home">
     <b-container class="bv-example-row" fluid>
       <b-row>
+        
         <b-col>
           <br>
           <PokemonCard />
@@ -18,16 +19,8 @@
           <br>
         </b-col>
         <b-col>
-          djaslkjdklasjkdlasjdlkjaslkjjdlkajsdlk
-          sadjaslkdjaslk
-          <br>asjdklasjdlkas
           <br>
-          sadkljaksdjasldjsa
-          brasjrasbrsajdkaslk
-          <br>lsjdlkas
-          asbr
-          sad
-
+          <PokemonElection />
         </b-col>
       </b-row>
     </b-container>
@@ -37,11 +30,20 @@
 <script>
 // @ is an alias to /src
 import PokemonCard from '@/components/Home/PokemonCard.vue'
+import PokemonElection from '@/components/Home/PokemonElection.vue'
+
 export default {
   name: 'HomeView',
   components: {
-    PokemonCard
+    PokemonCard,
+    PokemonElection
+  },
+
+  methods: {
+
+
   }
+
 }
 </script>
 
