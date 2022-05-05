@@ -32,3 +32,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Link Page
+https://pokemonvue-9da34.web.app/ 
