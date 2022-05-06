@@ -23,7 +23,6 @@
         </b-col>
       </b-row>
     </b-container>
-	<button @click="getPokemon">boton</button>
   </div>
 </template>
 
@@ -50,6 +49,10 @@ export default {
     PokemonCard,
     PokemonElection,
     
+},
+
+mounted() {
+  this.getPokemon();
 },
 
   methods: {
@@ -85,7 +88,7 @@ export default {
         this.pokemon.imagen = response.data.sprites.front_default;
 				this.pokemon.habilidad = response.data.abilities[0].ability.name
 				this.pokemon.tipo = response.data.types[0].type.name
-        this.pokemon.descripcion = this.getDescriptionPokemon(response.data.species.url)
+        this.getDescriptionPokemon(response.data.species.url)
 			})
 		} catch (error) {
 			this.message = 'error'
@@ -93,16 +96,14 @@ export default {
 	},
 
   async getDescriptionPokemon(urldata) {
-    let pokemonDescription;
     try {
       await axios.get(urldata).
       then( (response) => {
-        pokemonDescription = response.data.flavor_text_entries[26].flavor_text;
+        this.pokemon.descripcion = response.data.flavor_text_entries[26].flavor_text;
       })
     } catch (error) {
       this.message = 'error'
     }
-    return pokemonDescription;
   }
 
   }

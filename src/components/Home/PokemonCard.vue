@@ -1,5 +1,5 @@
 <template>
-    <b-card  class="overflow-hidden" style="max-width: 440px;">
+    <b-card border-variant="danger" class="overflow-hidden" style="max-width: 440px;">
         <b-row>
             <b-col md="6">
             <b-card-img :src="pokemon.imagen" alt="Image" class="rounded-0"></b-card-img>
@@ -8,10 +8,10 @@
                 <b-card-body>
                     <b-card-text>
                         <!--Description -->
-                        <p> {{pokemon.nombre}} </p> 
+                        <p> <b> {{pokemon.nombre.toUpperCase()}} </b> </p> 
                         {{pokemon.descripcion}}
-                        <p> Habilidad: {{pokemon.habilidad}} </p>
-                        <p> Tipo: {{pokemon.tipo}} </p>
+                        <p> <b> Habilidad: </b> {{pokemon.habilidad}} </p>
+                        <p> <b> Tipo: </b> {{pokemon.tipo}} </p>
                     </b-card-text>
                 </b-card-body>
             </b-col>
@@ -54,6 +54,6 @@ export default {
 
 .buttons {
     padding: 0 10px;
-    margin-right: 60px;
+    margin: 0 40px;
 }
 </style>
