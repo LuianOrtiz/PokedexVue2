@@ -4,7 +4,25 @@
       <router-link to="/home">Home</router-link>
     </nav>
     <router-view/>
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        Desarrollado por: 
+        <a class="text-dark" href="https://github.com/LuianOrtiz">@LuianOrtiz</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
   </div>
+  
 </template>
 
 <style scoped>
@@ -14,8 +32,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#app{
   background-image: url('@/assets/formulario-background.jpg');
 }
 nav {

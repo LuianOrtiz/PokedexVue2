@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <b-container class="bv-example-row" fluid>
+  <div class="home" >
+    <b-container class="bv-example-row contenedor" fluid>
       <b-row>
         <b-col>
           <br>
@@ -38,11 +38,11 @@ export default {
   data() {
     return {
       pokemon: {
-		imagen: "",
-        nombre: "",
-        descripcion: "",
-        habilidad: ["",""],
-        tipo: ["", ""]
+      imagen: "",
+      nombre: "bulbasaur",
+      descripcion: "",
+      habilidad: "",
+      tipo: ""
       }
     }
   },  
@@ -52,33 +52,38 @@ export default {
   },
 
   methods: {
-	async getPokemones(){
+  async getPokemones(){
+    var pokemonesList = [];
+    let pokemonsName = [];
 		const url_api_pokemon = "https://pokeapi.co/api/v2/pokemon/";
 			try {
 				await axios.get(url_api_pokemon).
 				then( (response) => {
-					console.log(response.data.results[0]);
-					}
-				)	  
+          pokemonesList = response.data.results;
+          pokemonsName =  pokemonesList.map((pokemon) => {
+            return pokemon.name;
+          })
+          console.log("lista" + pokemonsName);
+				})	  
 			} catch (error) {
 				this.message = 'error'
 			}
+      return pokemonsName;
 	},
 
 	async getPokemon() {
 		const url_pokemon = "https://pokeapi.co/api/v2/pokemon/";
 		try {
+      const nombrePokemones = await this.getPokemones();
+      console.log("nombres" + nombrePokemones);
 			var pokemonNombre = this.pokemon.nombre
 			await axios.get(url_pokemon+pokemonNombre).
 			then( (response) => {
+        console.log("Axios name: " + response.data.name);
 				this.pokemon.nombre = response.data.name;
-				this.pokemon.habilidad[0] = response.data.abilities[0].ability.name
-				this.pokemon.habilidad[1] = response.data.abilities[1].ability.name
-				this.pokemon.tipo[0] = response.data.types[0].type.name
-				this.pokemon.tipo[1] = response.data.types[1].type.name
-			}
-
-			)
+				this.pokemon.habilidad = response.data.abilities[0].ability.name
+				this.pokemon.tipo = response.data.types[0].type.name
+			})
 		} catch (error) {
 			this.message = 'error'
 		}
@@ -91,7 +96,10 @@ export default {
 
 <style scoped>
 .home{
-  background-image: url('@/assets/background-home.jpg');
+  background-color: azure;
+}
+.contenedor{
+  height: 750px;
 }
 .columnas{
   padding: 50px 50px;
