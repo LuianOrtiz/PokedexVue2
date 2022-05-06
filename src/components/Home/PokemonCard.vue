@@ -1,8 +1,8 @@
 <template>
-    <b-card  class="overflow-hidden" style="max-width: 540px;">
+    <b-card  class="overflow-hidden" style="max-width: 440px;">
         <b-row>
             <b-col md="6">
-            <b-card-img src="https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-2.png" alt="Image" class="rounded-0"></b-card-img>
+            <b-card-img :src="pokemon.imagen" alt="Image" class="rounded-0"></b-card-img>
             </b-col>
             <b-col md="6">
                 <b-card-body>
@@ -26,12 +26,18 @@ export default {
     name: 'PokemonCard',
     data(){
         return {
-
+            
         }
     },
 
     props: {
-        pokemon: Object
+        pokemon: {
+            nombre: "",
+            imagen: "",
+            descripcion: "",
+            habilidad: "",
+            tipo: ""
+            }
         
     },
 

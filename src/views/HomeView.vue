@@ -39,7 +39,7 @@ export default {
     return {
       pokemon: {
       imagen: "",
-      nombre: "bulbasaur",
+      nombre: "charmander",
       descripcion: "",
       habilidad: "",
       tipo: ""
@@ -48,8 +48,9 @@ export default {
   },  
   components: {
     PokemonCard,
-	PokemonElection
-  },
+    PokemonElection,
+    
+},
 
   methods: {
   async getPokemones(){
@@ -79,8 +80,9 @@ export default {
 			var pokemonNombre = this.pokemon.nombre
 			await axios.get(url_pokemon+pokemonNombre).
 			then( (response) => {
-        console.log("Axios name: " + response.data.name);
+        console.log(response.data);
 				this.pokemon.nombre = response.data.name;
+        this.pokemon.imagen = response.data.sprites.front_default;
 				this.pokemon.habilidad = response.data.abilities[0].ability.name
 				this.pokemon.tipo = response.data.types[0].type.name
 			})
