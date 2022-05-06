@@ -2,7 +2,7 @@
   <div class="home" >
     <b-container class="bv-example-row contenedor" fluid>
       <b-row>
-        <b-col>
+        <b-col >
           <br>
           <PokemonCard :pokemon=this.pokemon />
           <br>
@@ -80,16 +80,30 @@ export default {
 			var pokemonNombre = this.pokemon.nombre
 			await axios.get(url_pokemon+pokemonNombre).
 			then( (response) => {
-        console.log(response.data);
+        //console.log(response.data);
 				this.pokemon.nombre = response.data.name;
         this.pokemon.imagen = response.data.sprites.front_default;
 				this.pokemon.habilidad = response.data.abilities[0].ability.name
 				this.pokemon.tipo = response.data.types[0].type.name
+        this.pokemon.descripcion = this.getDescriptionPokemon(response.data.species.url)
 			})
 		} catch (error) {
 			this.message = 'error'
 		}
-	}
+	},
+
+  async getDescriptionPokemon(urldata) {
+    let pokemonDescription;
+    try {
+      await axios.get(urldata).
+      then( (response) => {
+        pokemonDescription = response.data.flavor_text_entries[26].flavor_text;
+      })
+    } catch (error) {
+      this.message = 'error'
+    }
+    return pokemonDescription;
+  }
 
   }
 
