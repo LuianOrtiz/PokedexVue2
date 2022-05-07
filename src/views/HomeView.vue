@@ -7,11 +7,6 @@
           <PokemonCard :pokemon=pokemon />
           <br>
         </b-col>
-        <b-col >
-          <br>
-          <PokemonElection />
-        </b-col>
-
       </b-row>
     </b-container>
   </div>
@@ -20,7 +15,6 @@
 <script>
 // @ is an alias to /src
 import PokemonCard from '@/components/Home/PokemonCard.vue'
-import PokemonElection from '@/components/Home/PokemonElection.vue'
 import axios from 'axios'
 
 export default {
@@ -32,7 +26,6 @@ export default {
   },  
   components: {
     PokemonCard,
-    PokemonElection,
     
 },
 
@@ -67,10 +60,6 @@ mounted() {
 </script>
 
 <style scoped>
-.home{
-  background-color: azure;
-}
-
 .columnas{
   padding: 50px 50px;
   margin: 10px 10px;

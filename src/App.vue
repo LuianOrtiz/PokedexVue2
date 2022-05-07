@@ -31,10 +31,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-image: url('@/assets/formulario-background.jpg');
+  background-color: #1a3d6c;
 }
 nav {
+  background-color: rgba(0, 0, 0, 0.528);
   padding: 30px;
 }
 
