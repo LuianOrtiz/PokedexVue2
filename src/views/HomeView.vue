@@ -1,18 +1,17 @@
 <template>
   <div class="home" >
     <b-container class="bv-example-row contenedor" fluid>
-      <b-row >
+      <b-row cols="4" >
         <b-col v-for="(pokemon, index) in pokemones" :key="index">
           <br>
-          {{pokemon}}
           <PokemonCard :pokemon=pokemon />
           <br>
         </b-col>
-
-        <b-col>
+        <b-col >
           <br>
           <PokemonElection />
         </b-col>
+
       </b-row>
     </b-container>
   </div>
