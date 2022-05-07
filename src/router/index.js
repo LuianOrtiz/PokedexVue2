@@ -9,7 +9,8 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    props: true
   },
   {
     path: '/',

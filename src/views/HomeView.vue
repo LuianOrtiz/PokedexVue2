@@ -1,22 +1,14 @@
 <template>
   <div class="home" >
     <b-container class="bv-example-row contenedor" fluid>
-      <b-row>
-        <b-col >
+      <b-row >
+        <b-col v-for="(pokemon, index) in pokemones" :key="index">
           <br>
-          <PokemonCard :pokemon=this.pokemon />
-          <br>
-        </b-col>
-        <b-col>
-          <br>
-          <PokemonCard :pokemon=this.pokemon />
+          {{pokemon}}
+          <PokemonCard :pokemon=pokemon />
           <br>
         </b-col>
-        <b-col>
-          <br>
-          <PokemonCard :pokemon=this.pokemon />
-          <br>
-        </b-col>
+
         <b-col>
           <br>
           <PokemonElection />
@@ -36,13 +28,7 @@ export default {
   name: 'HomeView',
   data() {
     return {
-      pokemon: {
-      imagen: "",
-      nombre: "charmander",
-      descripcion: "",
-      habilidad: "",
-      tipo: ""
-      }
+      pokemones: [],
     }
   },  
   components: {
@@ -52,60 +38,30 @@ export default {
 },
 
 mounted() {
-  this.getPokemon();
+  this.getPokemones();
 },
 
   methods: {
   async getPokemones(){
     var pokemonesList = [];
-    let pokemonsName = [];
 		const url_api_pokemon = "https://pokeapi.co/api/v2/pokemon/";
 			try {
 				await axios.get(url_api_pokemon).
 				then( (response) => {
           pokemonesList = response.data.results;
-          pokemonsName =  pokemonesList.map((pokemon) => {
+          this.pokemones =  pokemonesList.map((pokemon) => {
             return pokemon.name;
           })
-          console.log("lista" + pokemonsName);
+          console.log(this.pokemones);
 				})	  
 			} catch (error) {
 				this.message = 'error'
 			}
-      return pokemonsName;
 	},
-
-	async getPokemon() {
-		const url_pokemon = "https://pokeapi.co/api/v2/pokemon/";
-		try {
-      const nombrePokemones = await this.getPokemones();
-      console.log("nombres" + nombrePokemones);
-			var pokemonNombre = this.pokemon.nombre
-			await axios.get(url_pokemon+pokemonNombre).
-			then( (response) => {
-        //console.log(response.data);
-				this.pokemon.nombre = response.data.name;
-        this.pokemon.imagen = response.data.sprites.front_default;
-				this.pokemon.habilidad = response.data.abilities[0].ability.name
-				this.pokemon.tipo = response.data.types[0].type.name
-        this.getDescriptionPokemon(response.data.species.url)
-			})
-		} catch (error) {
-			this.message = 'error'
-		}
-	},
-
-  async getDescriptionPokemon(urldata) {
-    try {
-      await axios.get(urldata).
-      then( (response) => {
-        this.pokemon.descripcion = response.data.flavor_text_entries[26].flavor_text;
-      })
-    } catch (error) {
-      this.message = 'error'
-    }
+  hola() {
+    console.log("HOlitas de mar");
+    console.log(this.pokemones.length)
   }
-
   }
 
 }
@@ -115,9 +71,7 @@ mounted() {
 .home{
   background-color: azure;
 }
-.contenedor{
-  height: 750px;
-}
+
 .columnas{
   padding: 50px 50px;
   margin: 10px 10px;
