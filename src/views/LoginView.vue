@@ -1,9 +1,8 @@
 <template>
     <div class="login">
         <b-container>
-            <IniciarSesion />
+            <IniciarSesion/>
         </b-container>
-        
     </div>
 </template>
 
@@ -21,6 +20,7 @@ export default {
 <style scoped>
 
 .login {
-    height: 790px;
+    background-image: url('@/assets/formulario-background.jpg');
+    height: 800px;
 }
 </style>

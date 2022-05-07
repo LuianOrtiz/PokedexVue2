@@ -60,6 +60,9 @@ mounted() {
 </script>
 
 <style scoped>
+.home {
+  background-color: azure;
+}
 .columnas{
   padding: 50px 50px;
   margin: 10px 10px;

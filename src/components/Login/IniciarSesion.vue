@@ -1,6 +1,6 @@
 <template>
     <div class="formulario">
-        <b-form inline>
+        <b-form inline class="form">
             <label class="sr-only" for="inline-form-input-name">Correo</label>
             <b-form-input type="email" id="inline-form-input-name" class="mb-2 mr-sm-2 mb-sm-0" placeholder="example@gmail.com"></b-form-input>
             <label class="sr-only" for="inline-form-input-username">Contraseña</label>
@@ -35,11 +35,11 @@ export default {
 <style scoped>
 .formulario {
     border-style: solid;
-    border-color: red;
+    border-color: rgb(253, 216, 2);
     padding: 30px 30px;
+    background-color: rgba(30, 46, 64, 0.357);
 }
 .botones{
     margin: 30px 30px;
 }
-
 </style>
