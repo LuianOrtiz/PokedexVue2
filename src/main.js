@@ -14,14 +14,6 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCk71Xneh2kyTO0PeYOCn9efNQW-Fi4HZ0",
-  authDomain: "pokemonvue-9da34.firebaseapp.com",
-  projectId: "pokemonvue-9da34",
-  storageBucket: "pokemonvue-9da34.appspot.com",
-  messagingSenderId: "955876427442",
-  appId: "1:955876427442:web:ea65c3a190684dc4f26bab"
-};
 
 Vue.config.productionTip = false
 

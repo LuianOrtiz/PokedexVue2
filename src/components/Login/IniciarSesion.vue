@@ -18,7 +18,6 @@
 </template>
 <script>
 
-import firebase from 'firebase'
 
 export default {
     
@@ -30,10 +29,7 @@ export default {
         }
     },
     methods: {
-        login(){
-            firebase.auth().createUserWithEmailAndPassword(this.correo, this.password)
-            .then((user) => alert('Usuario conectado'), (error) => console.log(error));
-        }
+        
     }
 }
 </script>
