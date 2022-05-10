@@ -16,8 +16,10 @@
                 </b-card-body>
             </b-col>
         </b-row>
+        <!-- 
             <b-button variant="outline-primary" size="sm" class="buttons" @click="hola()">Escoger Pokemon </b-button>
             <b-button variant="outline-warning" size="sm" class="buttons">Ver detalles </b-button>
+        -->
     </b-card>
 </template>
 

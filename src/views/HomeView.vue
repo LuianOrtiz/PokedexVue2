@@ -9,6 +9,7 @@
         </b-col>
       </b-row>
     </b-container>
+    <a href="#" @click="logout">Cerrar Sesión</a>
   </div>
 </template>
 
@@ -16,6 +17,7 @@
 // @ is an alias to /src
 import PokemonCard from '@/components/Home/PokemonCard.vue'
 import axios from 'axios'
+import { getAuth } from '@firebase/auth'
 
 export default {
   name: 'HomeView',
@@ -50,9 +52,9 @@ mounted() {
 				this.message = 'error'
 			}
 	},
-  hola() {
-    console.log("HOlitas de mar");
-    console.log(this.pokemones.length)
+
+  logout(){
+    getAuth().signOut().then( () => this.$router.replace('login'))
   }
   }
 
